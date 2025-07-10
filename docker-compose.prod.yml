@@ -9,13 +9,22 @@ services:
 
   backend:
     build: ./backend
+    image: backend-prod
+    container_name: backend-prod
+    environment:
+      - ENV_PREFIX=/prod
+      - PORT=4001
     ports:
-      - "4001:3001"
+      - "4001:4001"
     depends_on:
       - db
 
   frontend:
     build: ./frontend
+    image: frontend-prod
+    container_name: frontend-prod
+    environment:
+      - VITE_BASE_PATH=/prod/
     ports:
       - "5174:4173"
     depends_on:
@@ -23,3 +32,4 @@ services:
 
 volumes:
   pgdata_prod:
+
