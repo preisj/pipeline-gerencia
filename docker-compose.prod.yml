@@ -15,7 +15,7 @@ services:
       - ENV_PREFIX=/prod
       - PORT=4001
     ports:
-      - "4001:4001"
+      - "3002:3002"
     depends_on:
       - db
 
@@ -26,7 +26,7 @@ services:
     environment:
       - VITE_BASE_PATH=/prod/
     ports:
-      - "5174:4173"
+      - "5174:5174"
     depends_on:
       - backend
 
