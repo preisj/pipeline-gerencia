@@ -40,7 +40,13 @@ jobs:
         with:
           host: 177.44.248.77
           username: univates
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: -----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+            QyNTUxOQAAACDVKknbA+aqPUiawAkUbHwJ12PuJ2caEYbYVjTBEkcvtQAAAJh4cnakeHJ2
+            pAAAAAtzc2gtZWQyNTUxOQAAACDVKknbA+aqPUiawAkUbHwJ12PuJ2caEYbYVjTBEkcvtQ
+            AAAEAIe+jY7jzGOfJ9AgYyjnArSzP3OnRxjNxDdX2QBCTvPdUqSdsD5qo9SJrACRRsfAnX
+            Y+4nZxoRhthWNMESRy+1AAAAEmRlcGxveS12bS11bml2YXRlcwECAw==
+            -----END OPENSSH PRIVATE KEY-----
           script: |
             cd ~/pipeline-gerencia
             git pull origin main
@@ -56,7 +62,13 @@ jobs:
         with:
           host: 177.44.248.77
           username: univates
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: -----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+            QyNTUxOQAAACDVKknbA+aqPUiawAkUbHwJ12PuJ2caEYbYVjTBEkcvtQAAAJh4cnakeHJ2
+            pAAAAAtzc2gtZWQyNTUxOQAAACDVKknbA+aqPUiawAkUbHwJ12PuJ2caEYbYVjTBEkcvtQ
+            AAAEAIe+jY7jzGOfJ9AgYyjnArSzP3OnRxjNxDdX2QBCTvPdUqSdsD5qo9SJrACRRsfAnX
+            Y+4nZxoRhthWNMESRy+1AAAAEmRlcGxveS12bS11bml2YXRlcwECAw==
+            -----END OPENSSH PRIVATE KEY-----
           script: |
             cd ~/pipeline-gerencia
             git pull origin main
