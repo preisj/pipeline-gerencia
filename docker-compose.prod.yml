@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: root
+    volumes:
+      - pgdata_prod:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    ports:
+      - "3002:3002"
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4174:4174"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata_prod:
