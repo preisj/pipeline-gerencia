@@ -41,8 +41,8 @@ jobs:
         run: |
           cd ~/pipeline-gerencia
           git pull origin main
-          sudo docker-compose -f docker-compose.homolog.yml down
-          sudo -p homolog docker-compose -f docker-compose.homolog.yml up -d --build
+          sudo docker-compose -p homolog -f docker-compose.homolog.yml down
+          sudo docker-compose -p homolog -f docker-compose.homolog.yml up -d --build
 
   deploy-prod:
     if: github.event.head_commit.message == 'deploy:prod'
@@ -53,6 +53,6 @@ jobs:
         run: |
           cd ~/pipeline-gerencia
           git pull origin main
-          sudo docker-compose -f docker-compose.prod.yml down
-          sudo -p prod docker-compose -f docker-compose.prod.yml up -d --build
+          sudo docker-compose -p prod -f docker-compose.prod.yml down
+          sudo docker-compose -p prod -f docker-compose.prod.yml up -d --build
 

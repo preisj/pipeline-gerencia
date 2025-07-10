@@ -1,16 +1,10 @@
-const express = require('express');
-const app = express();
+const app = require('./app');
 
-const ENV_PREFIX = process.env.ENV_PREFIX || '';
+const port = process.env.PORT || 3001;
 const basePath = process.env.ENV_PREFIX || '';
 
-app.use(express.json());
-
-app.get(`${ENV_PREFIX}/health`, (req, res) => res.send('OK'));
-app.get(`${basePath}/health`, (req, res) => res.send('OK'));
-
 app.listen(port, () => {
-  console.log(`Backend rodando na porta ${port} com basePath ${basePath}`);
+  console.log(`Backend rodando em ${basePath} na porta ${port}`);
 });
 
 
