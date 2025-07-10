@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Fazer deploy em homologação
         run: |
-          cd ~/app
+          cd ~/pipeline-gerencia
           git pull origin main
           sudo docker-compose -f docker-compose.homolog.yml up -d --build
 
@@ -50,7 +50,7 @@ jobs:
     steps:
       - name: Fazer deploy em produção
         run: |
-          cd ~/app
+          cd ~/pipeline-gerencia
           git pull origin main
           sudo docker-compose -f docker-compose.prod.yml up -d --build
 
