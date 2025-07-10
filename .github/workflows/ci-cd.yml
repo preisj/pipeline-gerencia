@@ -64,5 +64,4 @@ EOF
             cd ~/app
             git pull origin main
             sudo docker-compose -f docker-compose.prod.yml up -d --build
-EOF
 
