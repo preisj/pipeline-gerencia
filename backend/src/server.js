@@ -1,7 +1,8 @@
-const express = require('express');
-const app = express();
-app.use(express.json());
+const app = require('./app');
 
-app.get('/health', (req, res) => res.send('OK'));
+const PORT = 3001;
+app.listen(PORT, () => {
+  console.log(`Backend rodando na porta ${PORT}`);
+});
 
-app.listen(3001, () => console.log('Backend rodando na porta 3001'));
+
