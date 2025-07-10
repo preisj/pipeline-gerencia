@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const usersRoutes = require('./routes/users');
+const usersRoutes = require('../routes/users');
 
 const basePath = process.env.ENV_PREFIX || '';
 app.use(express.json());

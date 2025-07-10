@@ -1,6 +1,6 @@
 const request = require('supertest');
-const app = require('../../src/app');
-const data = require('../../src/data/users');
+const app = require('../app');
+const data = require('../../data/users');
 
 const prefix = process.env.ENV_PREFIX || '';
 
