@@ -42,7 +42,7 @@ jobs:
           username: univates
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/app
+            cd ~/pipeline-gerencia
             git pull origin main
             docker-compose -f docker-compose.homolog.yml up -d --build
 
@@ -58,6 +58,6 @@ jobs:
           username: univates
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/app
+            cd ~/pipeline-gerencia
             git pull origin main
             docker-compose -f docker-compose.prod.yml up -d --build
