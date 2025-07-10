@@ -41,7 +41,7 @@ jobs:
         run: |
           cd ~/pipeline-gerencia
           git pull origin main
-          sudo docker-compose -p homolog -f docker-compose.homolog.yml down
+          sudo docker-compose -p homolog -f docker-compose.homolog.yml down --remove-orphans
           sudo docker-compose -p homolog -f docker-compose.homolog.yml up -d --build
 
   deploy-prod:
@@ -53,6 +53,6 @@ jobs:
         run: |
           cd ~/pipeline-gerencia
           git pull origin main
-          sudo docker-compose -p prod -f docker-compose.prod.yml down
+          sudo docker-compose -p prod -f docker-compose.prod.yml down --remove-orphans
           sudo docker-compose -p prod -f docker-compose.prod.yml up -d --build
 
