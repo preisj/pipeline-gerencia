@@ -1,3 +1,4 @@
+
 name: CI/CD Pipeline
 
 on:
@@ -42,6 +43,8 @@ jobs:
           cd ~/pipeline-gerencia
           git pull origin main
           sudo docker-compose -p homolog -f docker-compose.homolog.yml down --remove-orphans
+          sudo docker rm -f backend-homolog || true
+          sudo docker rm -f frontend-homolog || true
           sudo docker-compose -p homolog -f docker-compose.homolog.yml up -d --build
 
   deploy-prod:
@@ -54,5 +57,7 @@ jobs:
           cd ~/pipeline-gerencia
           git pull origin main
           sudo docker-compose -p prod -f docker-compose.prod.yml down --remove-orphans
+          sudo docker rm -f backend-prod || true
+          sudo docker rm -f frontend-prod || true
           sudo docker-compose -p prod -f docker-compose.prod.yml up -d --build
 
